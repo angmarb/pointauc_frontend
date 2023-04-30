@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "./static/css/main.959dd770.chunk.css",
+    "main.js": "./static/js/main.3cc7f918.chunk.js",
+    "main.js.map": "./static/js/main.3cc7f918.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.72ce4266.js",
+    "runtime-main.js.map": "./static/js/runtime-main.72ce4266.js.map",
+    "static/js/2.01f176d0.chunk.js": "./static/js/2.01f176d0.chunk.js",
+    "static/js/2.01f176d0.chunk.js.map": "./static/js/2.01f176d0.chunk.js.map",
+    "index.html": "./index.html",
+    "precache-manifest.c10d136de89604d95e5906ccf92bd84f.js": "./precache-manifest.c10d136de89604d95e5906ccf92bd84f.js",
+    "service-worker.js": "./service-worker.js",
+    "static/css/main.959dd770.chunk.css.map": "./static/css/main.959dd770.chunk.css.map",
+    "static/js/2.01f176d0.chunk.js.LICENSE.txt": "./static/js/2.01f176d0.chunk.js.LICENSE.txt",
+    "static/js/main.3cc7f918.chunk.js.LICENSE.txt": "./static/js/main.3cc7f918.chunk.js.LICENSE.txt",
+    "static/media/DAAlert.02c44431.svg": "./static/media/DAAlert.02c44431.svg",
+    "static/media/index.scss": "./static/media/HelveticaNeueCyr-Thin.76bcf092.woff",
+    "static/media/auction.4bbe2c6e.svg": "./static/media/auction.4bbe2c6e.svg",
+    "static/media/donationBackground.jpg": "./static/media/donationBackground.bea52d9f.jpg",
+    "static/media/dropout_formula.png": "./static/media/dropout_formula.d5927e56.png",
+    "static/media/eblan.png": "./static/media/eblan.05b31592.png",
+    "static/media/pradenW.png": "./static/media/pradenW.4d69ad13.png",
+    "static/media/twitch.c984e73f.svg": "./static/media/twitch.c984e73f.svg",
+    "static/media/wheel.1a0f2ae1.svg": "./static/media/wheel.1a0f2ae1.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.72ce4266.js",
+    "static/js/2.01f176d0.chunk.js",
+    "static/css/main.959dd770.chunk.css",
+    "static/js/main.3cc7f918.chunk.js"
+  ]
+}
