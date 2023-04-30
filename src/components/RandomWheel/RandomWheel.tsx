@@ -224,7 +224,7 @@ const RandomWheel = <TWheelItem extends WheelItem>({
   const { wheelComponent, spin, clearWinner } = useWheel({
     rawItems: finalItems,
     onWin: handleWin as any,
-    background: activeEmote || 'https://cdn.7tv.app/emote/60db33899a9fbb6acd26b151/4x',
+    background: activeEmote,//|| 'https://cdn.7tv.app/emote/60db33899a9fbb6acd26b151/4x',
     spinTime,
     dropout: wheelFormat === WheelFormat.Dropout,
     deleteItem: hideDeleteItem ? undefined : onDelete,
@@ -296,19 +296,19 @@ const RandomWheel = <TWheelItem extends WheelItem>({
     document.cookie = 'seenDropoutProof=true; expires=Fri, 31 Dec 9999 23:59:59 GMT';
   }, []);
 
-  const getRandomEmote = useCallback((emotes: Emote[]): string => {
-    const index = getRandomIntInclusive(0, emotes.length - 1);
-    const { max = 2 } = emotes[index] as any;
-
-    return emotes[index].toLink(max);
-  }, []);
-
-  const handleEmotesLoad = useCallback(
-    (emotes: Emote[]) => {
-      setActiveEmote((emote) => emote || getRandomEmote(emotes));
-    },
-    [getRandomEmote],
-  );
+  // const getRandomEmote = useCallback((emotes: Emote[]): string => {
+  //   const index = getRandomIntInclusive(0, emotes.length - 1);
+  //   const { max = 2 } = emotes[index] as any;
+  //
+  //   return emotes[index].toLink(max);
+  // }, []);
+  const handleEmotesLoad = useCallback(() => {}, []);
+  // const handleEmotesLoad = useCallback(
+  //   (emotes: Emote[]) => {
+  //     setActiveEmote((emote) => emote || getRandomEmote(emotes));
+  //   },
+  //   [getRandomEmote],
+  // );
 
   useEffect(() => {
     if (wheelFormat === WheelFormat.BattleRoyal) {

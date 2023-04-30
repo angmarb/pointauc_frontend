@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux';
 // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
 // @ts-ignore
 import { EmoteFetcher, Collection, Emote } from '@kozjar/twitch-emoticons';
-// import SevenTV, { SevenTVEmote } from '7tv';
 import { RootState } from '../../reducers';
 import './TwitchEmotesList..scss';
 
@@ -26,7 +25,7 @@ interface TwitchEmotesListProps {
 
 const flattenCollection = (collection: Collection<string, Emote>): Emote[] => Array.from<Emote>(collection.values());
 
-const emoteLists = ['default', 'twitch', '7tv', 'bttv', 'ffz'];
+const emoteLists = ['default', /*'twitch', '7tv', 'bttv', 'ffz'*/];
 
 const TwitchEmotesList: FC<TwitchEmotesListProps> = ({ setActiveEmote, onEmotesLoad }) => {
   const { userId, username } = useSelector((root: RootState) => root.user);
@@ -41,9 +40,9 @@ const TwitchEmotesList: FC<TwitchEmotesListProps> = ({ setActiveEmote, onEmotesL
         [
           defaultEmotes,
           // sevenTVApi.fetchUserEmotes(username || '').then((emotes) => emotes.map(createSevenTVEmote)),
-          fetcher.fetchTwitchEmotes(Number(userId)).then(flattenCollection),
-          fetcher.fetchBTTVEmotes(Number(userId)).then(flattenCollection),
-          fetcher.fetchFFZEmotes(Number(userId)).then(flattenCollection),
+          fetcher.fetchTwitchEmotes(undefined).then(flattenCollection),
+          // fetcher.fetchBTTVEmotes(Number(userId)).then(flattenCollection),
+          // fetcher.fetchFFZEmotes(Number(userId)).then(flattenCollection),
         ].map((request) => request.catch(() => null)),
       );
     } else {

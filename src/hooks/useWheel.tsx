@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import CustomEase from '../utils/CustomEase';
 import { WheelItem, WheelItemWithAngle } from '../models/wheel.model';
-import pradenW from '../assets/img/pradenW.png';
+import wheelCenterImg from '../assets/img/cat.jpg';
 import { fitText, shuffle } from '../utils/common.utils';
 import SpinPaceService, { RandomPaceConfig } from '../services/SpinPaceService';
 import { SPIN_PATH } from '../constants/wheel';
@@ -37,7 +37,7 @@ window.gsap = gsap;
 type Context = CanvasRenderingContext2D;
 
 const centerCircleStyles = (background?: string | null): CSSProperties => ({
-  backgroundImage: `url(${background || pradenW})`,
+  backgroundImage: `url(${background || wheelCenterImg})`,
   backgroundColor: 'transparent',
   backgroundPosition: 'center',
   backgroundSize: 'cover',
