@@ -5,7 +5,7 @@ import { AnyAction, configureStore, Middleware } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import dayjs from 'dayjs';
-import { Route, Router, Switch } from 'react-router-dom';
+import {BrowserRouter, Route, Router, Switch} from 'react-router-dom';
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import App from './components/App/App';
 import * as serviceWorker from './serviceWorker';
@@ -71,7 +71,7 @@ if (window.location.host === 'woodsauc-reneawal.netlify.app') {
 } else {
   ReactDOM.render(
     <Provider store={store}>
-      <Router history={history}>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Switch>
           <Route exact path={ROUTES.TWITCH_REDIRECT}>
             <TwitchRedirect />
@@ -91,7 +91,7 @@ if (window.location.host === 'woodsauc-reneawal.netlify.app') {
             <App />
           </Route>
         </Switch>
-      </Router>
+      </BrowserRouter>
     </Provider>,
     document.getElementById('root'),
   );
