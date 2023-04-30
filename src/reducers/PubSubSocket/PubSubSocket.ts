@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction, ThunkDispatch } from '@reduxjs/toolkit';
 import { Action } from 'redux';
-import axios from 'axios';
+// import axios from 'axios';
 import WebSocketService from '../../services/WebSocketService';
 import { Purchase } from '../Purchases/Purchases';
 import { MESSAGE_TYPES } from '../../constants/webSocket.constants';
@@ -47,7 +47,7 @@ export const connectToServer =
           ws.send(JSON.stringify({ type: MESSAGE_TYPES.IDENTIFY_CLIENT }));
         }
 
-        axios.get('api/isAlive');
+        //axios.get('api/isAlive');
       }, 1000 * 60 * 30);
 
       dispatch(setWebSocket(ws));

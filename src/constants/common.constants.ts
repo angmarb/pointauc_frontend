@@ -36,11 +36,7 @@ export const TRAILER_MIN_SIZE = {
   height: 250,
 };
 
-export const YOUTUBE_API_KEYS = [
-  'AIzaSyCVPinFlGHMn0uzeWFjNTA38QOZBejOlSs',
-  'AIzaSyD0WjHt1tEIzdYLWSbcArCXTdBbDvyxDMk',
-  'AIzaSyAbkUdit9z4zGiSmXtYAuBoJYKMDeZ6rSM',
-];
+export const YOUTUBE_API_KEYS = [];
 
 export enum LocalStorage {
   SaveConfig = 'saveConfig',
