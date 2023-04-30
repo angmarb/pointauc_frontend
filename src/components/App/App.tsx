@@ -138,15 +138,15 @@ const App: React.FC = () => {
 
   const createMenuItem = useCallback(
     ({ IconComponent, title, path, disabled, divide }: MenuItem) => (
-      <>
+      <div key={title}>
         {divide && <Divider style={{ margin: '10px 0' }} />}
-        <ListItem disabled={disabled} button key={title} selected={path === pathname} component={Link} to={path}>
+        <ListItem disabled={disabled} button selected={path === pathname} component={Link} to={path}>
           <ListItemIcon>
             <IconComponent className={classes.menuIcon} />
           </ListItemIcon>
           <ListItemText primary={title} />
         </ListItem>
-      </>
+      </div>
     ),
     [classes.menuIcon, pathname],
   );
