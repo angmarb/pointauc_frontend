@@ -115,7 +115,7 @@ const SlotComponent: React.FC<Slot> = ({ id, extra, amount, name }) => {
         onKeyPress={createNewSlotOnEnter}
         type="number"
       />
-      <IconButton className="slot-add-extra" onClick={handleAddExtra} title="Прибавить стоимость">
+      <IconButton className="slot-add-extra" onClick={handleAddExtra} title="Прибавить стоимость" tabIndex={-1}>
         <AddIcon />
       </IconButton>
       <OutlinedInput

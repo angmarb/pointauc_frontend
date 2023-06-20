@@ -5,7 +5,7 @@ import { AnyAction, configureStore, Middleware } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import dayjs from 'dayjs';
-import {BrowserRouter, Route, Router, Switch} from 'react-router-dom';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import App from './components/App/App';
 import * as serviceWorker from './serviceWorker';
@@ -18,10 +18,10 @@ import { sortSlots } from './utils/common.utils';
 import ChatWheelPage from './components/ChatWheelPage/ChatWheelPage';
 import { theme } from './constants/theme.constants';
 import NewDomainRedirect from './components/NewDomainRedirect/NewDomainRedirect';
-import history from './constants/history';
 import SaveLoadService from './services/SaveLoadService';
 import AudioRoom from './components/AudioRoom/AudioRoom';
 import './assets/i18n';
+import AucWidget from './components/AucWidget/AucWidget';
 
 dayjs.locale('ru');
 
@@ -85,6 +85,11 @@ if (window.location.host === 'woodsauc-reneawal.netlify.app') {
           <Route exact path={ROUTES.AUDIO_ROOM}>
             <MuiThemeProvider theme={theme}>
               <AudioRoom />
+            </MuiThemeProvider>
+          </Route>
+          <Route exact path={ROUTES.AUC_WIDGET}>
+            <MuiThemeProvider theme={theme}>
+              <AucWidget />
             </MuiThemeProvider>
           </Route>
           <Route path={ROUTES.HOME}>

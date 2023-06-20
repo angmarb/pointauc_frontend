@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/pointauc_frontend/precache-manifest.d67704406d987de7a24539d197fc1038.js"
+  "/pointauc_frontend/precache-manifest.666d20625f41d72d0028be2a66502335.js"
 );
 
 self.addEventListener('message', (event) => {

@@ -10,6 +10,8 @@ import { getCookie } from '../../../utils/common.utils';
 import SlotsList from './SlotsList';
 import { setAucSettings } from '../../../reducers/AucSettings/AucSettings';
 import SlotsHeader from '../SlotsHeader/SlotsHeader';
+import SaveLoadService from '../../../services/SaveLoadService';
+import {setSlots} from '../../../reducers/Slots/Slots';
 
 const SlotsColumn: React.FC = () => {
   const dispatch = useDispatch();
@@ -45,6 +47,15 @@ const SlotsColumn: React.FC = () => {
 
     dispatch(setAucSettings({ isTotalVisible: newVisible === 'true' }));
   }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(setSlots(SaveLoadService.getSlots('Автосохранение')));
+  }, []);
+  useEffect(() => {
+    if (slots.length > 0) {
+      SaveLoadService.rewrite(slots, 'Автосохранение');
+    }
+  }, [slots]);
 
   const slotsColumnClasses = useMemo(
     () => classNames('slots-column', { dragging: !!draggedRedemption }),

@@ -17,6 +17,7 @@ const ROUTES = {
   CHAT_WHEEL: '/chatWheel/:channel',
   REQUESTS: '/requests',
   AUDIO_ROOM: '/audioRoom',
+  AUC_WIDGET: '/auc_widget',
 };
 
 export default ROUTES;

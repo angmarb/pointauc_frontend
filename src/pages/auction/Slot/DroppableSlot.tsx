@@ -131,7 +131,7 @@ const DroppableSlot: React.FC<DroppableSlotProps> = ({ index, ...slotProps }) =>
         <Typography className="slot-fast-index">{`#${slotProps.fastId}`}</Typography>
         <SlotComponent {...slotProps} />
       </div>
-      <IconButton onClick={handleDelete} className="delete-button" title="Удалить слот">
+      <IconButton onClick={handleDelete} className="delete-button" title="Удалить слот" tabIndex={-1}>
         <DeleteIcon />
       </IconButton>
       <IconButton
@@ -140,6 +140,7 @@ const DroppableSlot: React.FC<DroppableSlotProps> = ({ index, ...slotProps }) =>
         title="Дополнительно"
         aria-controls="extra"
         ref={extraIcon}
+        tabIndex={-1}
       >
         <MoreHorizIcon />
       </IconButton>
@@ -150,6 +151,7 @@ const DroppableSlot: React.FC<DroppableSlotProps> = ({ index, ...slotProps }) =>
         anchorEl={extraIcon.current}
         PaperProps={{ style: { width: '20ch' } }}
         TransitionProps={{ timeout: 100 }}
+        tabIndex={-1}
       >
         <MenuItem onClick={handleOpenTrailer}>Трейлер</MenuItem>
       </Menu>
