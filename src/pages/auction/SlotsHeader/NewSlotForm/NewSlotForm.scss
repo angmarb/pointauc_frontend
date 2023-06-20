@@ -10,6 +10,12 @@
     font-size: 16px;
   }
 
+  @media only screen and (max-width: 800px) {
+    .add-slot-button {
+      font-size: 8px;
+    }
+  }
+
   .slot-name {
     flex-grow: 1;
   }

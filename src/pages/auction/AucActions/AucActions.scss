@@ -6,6 +6,12 @@
   align-items: center;
 }
 
+@media only screen and (max-height: 800px) {
+  .options-wrapper {
+    display: none;
+  }
+}
+
 .options {
   display: flex;
   align-items: center;

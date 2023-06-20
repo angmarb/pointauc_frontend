@@ -23,4 +23,12 @@
   .slot-search-wrapper {
     flex-grow: 3;
   }
+
+  @media only screen and (max-width: 800px) {
+    .slot-search-wrapper {
+      flex-grow: 1;
+      flex-shrink: 8;
+    }
+  }
+
 }
