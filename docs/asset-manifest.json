@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/pointauc_frontend/static/css/main.a200ba93.chunk.css",
+    "main.css": "/pointauc_frontend/static/css/main.eec5fb9c.chunk.css",
     "main.js": "/pointauc_frontend/static/js/main.564d5a80.chunk.js",
     "main.js.map": "/pointauc_frontend/static/js/main.564d5a80.chunk.js.map",
     "runtime-main.js": "/pointauc_frontend/static/js/runtime-main.dc5af24d.js",
@@ -8,9 +8,9 @@
     "static/js/2.ff5b190a.chunk.js": "/pointauc_frontend/static/js/2.ff5b190a.chunk.js",
     "static/js/2.ff5b190a.chunk.js.map": "/pointauc_frontend/static/js/2.ff5b190a.chunk.js.map",
     "index.html": "/pointauc_frontend/index.html",
-    "precache-manifest.0be3fb06a093cca593cf36d41425b58d.js": "/pointauc_frontend/precache-manifest.0be3fb06a093cca593cf36d41425b58d.js",
+    "precache-manifest.d0041c1d23201d6c83a6f2635e32e3b7.js": "/pointauc_frontend/precache-manifest.d0041c1d23201d6c83a6f2635e32e3b7.js",
     "service-worker.js": "/pointauc_frontend/service-worker.js",
-    "static/css/main.a200ba93.chunk.css.map": "/pointauc_frontend/static/css/main.a200ba93.chunk.css.map",
+    "static/css/main.eec5fb9c.chunk.css.map": "/pointauc_frontend/static/css/main.eec5fb9c.chunk.css.map",
     "static/js/2.ff5b190a.chunk.js.LICENSE.txt": "/pointauc_frontend/static/js/2.ff5b190a.chunk.js.LICENSE.txt",
     "static/js/main.564d5a80.chunk.js.LICENSE.txt": "/pointauc_frontend/static/js/main.564d5a80.chunk.js.LICENSE.txt",
     "static/media/DAAlert.02c44431.svg": "/pointauc_frontend/static/media/DAAlert.02c44431.svg",
@@ -27,7 +27,7 @@
   "entrypoints": [
     "static/js/runtime-main.dc5af24d.js",
     "static/js/2.ff5b190a.chunk.js",
-    "static/css/main.a200ba93.chunk.css",
+    "static/css/main.eec5fb9c.chunk.css",
     "static/js/main.564d5a80.chunk.js"
   ]
 }
