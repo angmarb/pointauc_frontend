@@ -18,7 +18,6 @@ import { sortSlots } from './utils/common.utils';
 import ChatWheelPage from './components/ChatWheelPage/ChatWheelPage';
 import { theme } from './constants/theme.constants';
 import NewDomainRedirect from './components/NewDomainRedirect/NewDomainRedirect';
-import SaveLoadService from './services/SaveLoadService';
 import AudioRoom from './components/AudioRoom/AudioRoom';
 import './assets/i18n';
 import AucWidget from './components/AucWidget/AucWidget';
@@ -50,16 +49,6 @@ export const store = configureStore({
   reducer: rootReducer,
   middleware: [thunk, sortSlotsMiddleware],
 });
-
-window.onbeforeunload = (): undefined => {
-  const { slots } = store.getState().slots;
-
-  if (slots.length > 1) {
-    SaveLoadService.rewrite(slots, 'Автосохранение');
-  }
-
-  return undefined;
-};
 
 if (window.location.host === 'woodsauc-reneawal.netlify.app') {
   ReactDOM.render(

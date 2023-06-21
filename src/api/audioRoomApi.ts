@@ -1,6 +1,3 @@
-import { axios } from './axios';
-import ENDPOINTS from '../constants/api.constants';
-
 export interface AudioRoomUser {
   username: string;
   password: string;

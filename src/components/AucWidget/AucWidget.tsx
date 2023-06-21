@@ -4,8 +4,6 @@ import {Slot} from '../../models/slot.model';
 import './AucWidget.scss';
 import {Grid} from '@material-ui/core';
 import PageContainer from '../PageContainer/PageContainer';
-import {useSelector} from 'react-redux';
-import {RootState} from '../../reducers';
 import DisabledSlot from './Slot/DisabledSlot';
 
 const AucWidget = () => {
@@ -29,9 +27,7 @@ const AucWidget = () => {
             window.removeEventListener('storage', listener);
         }
     }, []);
-      const { background } = useSelector((root: RootState) => root.aucSettings.settings);
       const backgroundStyles = {
-        backgroundImage: background ? `url(${background})` : undefined,
         backgroundPosition: 'center',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',

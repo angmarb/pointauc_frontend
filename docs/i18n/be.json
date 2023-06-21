@@ -17,6 +17,7 @@
       "saveLoad":"Захаваньне/Спампоўка",
       "downloadMarbles":"Спампаваць шары",
       "compactView":"Кампактны рэжым",
+      "trackAutoSave": "Аўтазахаванне",
       "supportCreator":"Падтрымаць аўтара",
       "showWinningChances":"Паказаць шанец на перамогу",
       "language":"Language: {{lng}}",

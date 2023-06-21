@@ -1,5 +1,3 @@
-import { axios } from './axios';
-import { YOUTUBE_API_KEYS } from '../constants/common.constants';
 import { VideoSnippet } from '../models/youtube';
 
 export const searchYoutubeVideos = async (query: string, keyId = 0): Promise<VideoSnippet[]> => {

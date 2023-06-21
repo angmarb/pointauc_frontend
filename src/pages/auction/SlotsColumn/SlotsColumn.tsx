@@ -11,7 +11,7 @@ import SlotsList from './SlotsList';
 import { setAucSettings } from '../../../reducers/AucSettings/AucSettings';
 import SlotsHeader from '../SlotsHeader/SlotsHeader';
 import SaveLoadService from '../../../services/SaveLoadService';
-import {setSlots} from '../../../reducers/Slots/Slots';
+import {MonkeyEvent, setSlots} from '../../../reducers/Slots/Slots';
 
 const SlotsColumn: React.FC = () => {
   const dispatch = useDispatch();
@@ -48,14 +48,31 @@ const SlotsColumn: React.FC = () => {
     dispatch(setAucSettings({ isTotalVisible: newVisible === 'true' }));
   }, [dispatch]);
 
+  const { trackAutoSave } = useSelector((root: RootState) => root.aucSettings.view);
   useEffect(() => {
-    dispatch(setSlots(SaveLoadService.getSlots('Автосохранение')));
-  }, [dispatch]);
+      if (!trackAutoSave) {
+        return;
+      }
+      dispatch(setSlots(Object.assign(SaveLoadService.getSlots('Автосохранение'), {internalUpdate: true} as MonkeyEvent)));
+      const listener = (e: StorageEvent) => {
+          if (e.key === 'saveConfig') {
+            dispatch(setSlots(Object.assign(SaveLoadService.getSlots('Автосохранение'), {internalUpdate: true} as MonkeyEvent)));
+          }
+      };
+      window.addEventListener('storage', listener);
+      return () => {
+          window.removeEventListener('storage', listener);
+      }
+  }, [dispatch, trackAutoSave]);
+
   useEffect(() => {
-    if (slots.length > 0) {
+    if (!trackAutoSave) {
+      return;
+    }
+    if (slots.length > 0  && !(slots as MonkeyEvent).internalUpdate) {
       SaveLoadService.rewrite(slots, 'Автосохранение');
     }
-  }, [slots]);
+  }, [slots, trackAutoSave]);
 
   const slotsColumnClasses = useMemo(
     () => classNames('slots-column', { dragging: !!draggedRedemption }),

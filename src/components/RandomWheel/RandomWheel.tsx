@@ -14,14 +14,12 @@ import {
 } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
 // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-// @ts-ignore
-import { Emote } from '@kozjar/twitch-emoticons';
 import { useTranslation } from 'react-i18next';
 import { PACE_PRESETS, WHEEL_OPTIONS, WheelFormat } from '../../constants/wheel';
 import { RandomPaceConfig } from '../../services/SpinPaceService';
 import { Game } from '../Bracket/components/model';
 import { WheelItem } from '../../models/wheel.model';
-import { getCookie, getRandomIntInclusive, getTotalSize, getWheelColor } from '../../utils/common.utils';
+import { getCookie, getTotalSize, getWheelColor } from '../../utils/common.utils';
 import useWheel from '../../hooks/useWheel';
 import withLoading from '../../decorators/withLoading';
 import { getRandomNumber } from '../../api/randomApi';

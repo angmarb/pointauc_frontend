@@ -1,9 +1,7 @@
 import { DeepPartial } from 'react-hook-form';
-import ENDPOINTS from '../constants/api.constants';
 import { IntegrationFields, SettingFields } from '../reducers/AucSettings/AucSettings';
 import { GetUserDto } from '../models/user.model';
 import { UserInfo } from '../reducers/User/User';
-import { axios } from './axios';
 
 export const getUsername = async (): Promise<UserInfo> => {
   throw new Error('no network');

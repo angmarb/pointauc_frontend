@@ -1,5 +1,3 @@
-import { axios } from './axios';
-import ENDPOINTS from '../constants/api.constants';
 import { PatchRedemptionDto } from '../models/redemption.model';
 
 // eslint-disable-next-line import/prefer-default-export

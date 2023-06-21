@@ -28,7 +28,7 @@ const flattenCollection = (collection: Collection<string, Emote>): Emote[] => Ar
 const emoteLists = ['default', /*'twitch', '7tv', 'bttv', 'ffz'*/];
 
 const TwitchEmotesList: FC<TwitchEmotesListProps> = ({ setActiveEmote, onEmotesLoad }) => {
-  const { userId, username } = useSelector((root: RootState) => root.user);
+  const { userId/*, username */ } = useSelector((root: RootState) => root.user);
   const [userEmotes, setUserEmotes] = useState<(Emote[] | null)[]>();
 
   const updateEmotes = useCallback(async () => {

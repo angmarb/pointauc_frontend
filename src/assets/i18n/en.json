@@ -17,6 +17,7 @@
       "saveLoad": "Save/Load",
       "downloadMarbles": "Download Marbles",
       "compactView": "Compact View",
+      "trackAutoSave": "Autosave",
       "supportCreator": "support the author",
       "showWinningChances": "Show winning chances",
       "language": "Language: {{lng}}",

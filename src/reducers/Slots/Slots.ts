@@ -42,8 +42,12 @@ export const createRandomSlots = (count: number, max: number, min = 1): Slot[] =
       }),
   );
 
+export interface MonkeyEvent {
+  internalUpdate?: boolean;
+}
+
 const initialState: SlotsState = {
-  slots: [createSlot()],
+  slots: Object.assign([createSlot()], {internalUpdate: true} as MonkeyEvent),
   searchTerm: '',
   // slots: [
   // ...createRandomSlots(2, 20000, 10000),

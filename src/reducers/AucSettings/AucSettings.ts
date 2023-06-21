@@ -27,6 +27,7 @@ export interface SettingFields {
 
 export interface ViewSettings {
   compact: boolean;
+  trackAutoSave: boolean;
 }
 
 export interface RewardSetting {
@@ -62,6 +63,7 @@ interface AucSettingsState {
 export const initialState: AucSettingsState = {
   view: {
     compact: false,
+    trackAutoSave: true,
   },
   settings: {
     startTime: 10,
@@ -114,13 +116,16 @@ const aucSettingsSlice = createSlice({
     setCompact(state, action: PayloadAction<boolean>): void {
       state.view.compact = action.payload;
     },
+    setTrackAutoSave(state, action: PayloadAction<boolean>): void {
+      state.view.trackAutoSave = action.payload;
+    },
     setShowChances(state, action: PayloadAction<boolean>): void {
       state.settings.showChances = action.payload;
     },
   },
 });
 
-export const { setAucSettings, setIntegration, setCompact, setShowChances } = aucSettingsSlice.actions;
+export const { setAucSettings, setIntegration, setCompact, setShowChances, setTrackAutoSave } = aucSettingsSlice.actions;
 
 export const loadUserData = async (dispatch: ThunkDispatch<{}, {}, Action>): Promise<GetUserDto> => {
   const user = await getUserData();
