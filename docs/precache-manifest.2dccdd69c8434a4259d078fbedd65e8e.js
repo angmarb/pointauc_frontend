@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f94e3154c959b41ebed63ff45ec49c59",
+    "revision": "7a48249779c2f3a0d305aa7fbbb1a064",
     "url": "/pointauc_frontend/index.html"
   },
   {
-    "revision": "c3d70323a82f259c9bc0",
+    "revision": "f66fe228942328fe6c2f",
     "url": "/pointauc_frontend/static/css/main.6312972d.chunk.css"
   },
   {
@@ -16,12 +16,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/pointauc_frontend/static/js/2.8bb52c41.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "c3d70323a82f259c9bc0",
-    "url": "/pointauc_frontend/static/js/main.24bf1858.chunk.js"
+    "revision": "f66fe228942328fe6c2f",
+    "url": "/pointauc_frontend/static/js/main.ad148d25.chunk.js"
   },
   {
     "revision": "4d4bf20d36cc260e0a2143e8c784baac",
-    "url": "/pointauc_frontend/static/js/main.24bf1858.chunk.js.LICENSE.txt"
+    "url": "/pointauc_frontend/static/js/main.ad148d25.chunk.js.LICENSE.txt"
   },
   {
     "revision": "5216114c0532316bb5ff",

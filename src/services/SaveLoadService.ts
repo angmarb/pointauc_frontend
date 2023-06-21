@@ -15,13 +15,13 @@ class SaveLoadService {
     return rawConfig ? JSON.parse(rawConfig) : [];
   };
 
-  static getSlots = (name: string): Slot[] => {
+  static getSlots = (name: string): Slot[] | undefined => {
     const config = SaveLoadService.getSavesConfig();
     const configIndex = config.findIndex(({ name: infoName }) => infoName === name);
 
     const slots = config[configIndex] ? localStorage.getItem(config[configIndex].slotsLocation) : undefined;
 
-    return slots ? JSON.parse(slots) : [];
+    return slots ? JSON.parse(slots) : undefined;
   };
 
   static rename = (previousName: string, nextName: string): SaveInfo[] => {

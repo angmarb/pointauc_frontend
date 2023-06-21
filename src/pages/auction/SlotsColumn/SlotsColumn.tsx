@@ -50,7 +50,7 @@ const SlotsColumn: React.FC = () => {
 
   useEffect(() => {
     dispatch(setSlots(SaveLoadService.getSlots('Автосохранение')));
-  }, []);
+  }, [dispatch]);
   useEffect(() => {
     if (slots.length > 0) {
       SaveLoadService.rewrite(slots, 'Автосохранение');

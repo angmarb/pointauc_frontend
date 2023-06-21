@@ -121,8 +121,10 @@ const slotsSlice = createSlice({
       state.slots = initialState.slots;
       slotNamesMap.clear();
     },
-    setSlots(state, action: PayloadAction<Slot[]>): void {
-      state.slots = action.payload;
+    setSlots(state, action: PayloadAction<Slot[] | undefined>): void {
+      if (action.payload) {
+        state.slots = action.payload;
+      }
     },
     setSearchTerm(state, action: PayloadAction<string>): void {
       state.searchTerm = action.payload;
