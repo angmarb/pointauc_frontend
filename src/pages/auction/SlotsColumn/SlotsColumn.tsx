@@ -53,7 +53,10 @@ const SlotsColumn: React.FC = () => {
       if (!trackAutoSave) {
         return;
       }
-      dispatch(setSlots(Object.assign(SaveLoadService.getSlots('Автосохранение'), {internalUpdate: true} as MonkeyEvent)));
+      const initValue = SaveLoadService.getSlots('Автосохранение');
+      if (initValue) {
+        dispatch(setSlots(Object.assign(initValue, {internalUpdate: true} as MonkeyEvent)));
+      }
       const listener = (e: StorageEvent) => {
           if (e.key === 'saveConfig') {
             dispatch(setSlots(Object.assign(SaveLoadService.getSlots('Автосохранение'), {internalUpdate: true} as MonkeyEvent)));
