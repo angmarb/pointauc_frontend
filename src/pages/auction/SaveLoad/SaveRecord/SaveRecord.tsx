@@ -45,7 +45,7 @@ const SaveRecord: FC<SaveRecordProps> = ({ timestamp, name, length, onConfigChan
     <div className="save-record">
       <div className="row">
         <div className="row">
-          <TextField variant="outlined" className="name-input" defaultValue={name} onBlur={handleRename} />
+          <TextField variant="outlined" className="name-input" defaultValue={name} onBlur={handleRename} disabled={name === 'Автосохранение'} />
           <Typography className="timestamp">{`${length} лотов`}</Typography>
         </div>
         <Typography className="timestamp">{dayjs(timestamp).format(FORMAT.DATE.dateTime)}</Typography>
@@ -62,7 +62,7 @@ const SaveRecord: FC<SaveRecordProps> = ({ timestamp, name, length, onConfigChan
             Скачать в файл
           </Button>
         </div>
-        <Button variant="outlined" color="secondary" size="small" onClick={handleDelete}>
+        <Button variant="outlined" color="secondary" size="small" onClick={handleDelete} disabled={name === 'Автосохранение'}>
           Удалить
         </Button>
       </div>
