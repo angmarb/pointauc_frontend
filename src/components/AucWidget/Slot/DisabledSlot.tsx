@@ -17,14 +17,14 @@ const DisabledSlot: React.FC<DroppableSlotProps> = ({ index, ...slotProps }) => 
 
   const slotElement = useRef<HTMLDivElement>(null);
 
-  const slotWrapperClasses = classNames('slot-wrapper', { 'custom-background': background });
+  const slotWrapperClasses = classNames('widget-slot-wrapper', { 'custom-background': background });
 
   return (
     <div
       className={slotWrapperClasses}
     >
-      <div className="slot" ref={slotElement}>
-        <Typography className="slot-index">{`${index}.`}</Typography>
+      <div className="widget-slot" ref={slotElement}>
+        <Typography className="widget-slot-index">{`${index}.`}</Typography>
         <SlotComponent {...slotProps} />
       </div>
     </div>

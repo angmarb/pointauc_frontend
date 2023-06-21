@@ -40,7 +40,7 @@ const AucWidget = () => {
 
     return (
         <PageContainer className="widget-slots" style={backgroundStyles} maxWidth={false}>
-            <div className="compact-view">
+            <div className="widget-view">
               {slots.map((slot, index) => (
                 <Grid key={slot.id} item xs={12}>
                   <DisabledSlot index={index + 1} {...slot} />

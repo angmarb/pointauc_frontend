@@ -1,7 +1,6 @@
 import React, { memo } from 'react';
 import { OutlinedInput } from '@material-ui/core';
 import './Slot.scss';
-import './SlotCompact.scss';
 import { useTranslation } from 'react-i18next';
 import { Slot } from '../../../models/slot.model';
 
@@ -11,13 +10,13 @@ const SlotComponent: React.FC<Slot> = ({  amount, name }) => {
   return (
     <>
       <OutlinedInput
-        className="slot-name slot-input"
+        className="widget-slot-name widget-slot-input"
         placeholder={t('auc.lotName')}
         value={name}
         disabled={true}
       />
       <OutlinedInput
-        className="slot-money slot-input"
+        className="widget-slot-money widget-slot-input"
         placeholder={t('common.currencySign')}
         type="number"
         value={amount}
