@@ -1,6 +1,6 @@
 import React, {FC, useCallback, useState} from 'react';
 import PageContainer from '../../../components/PageContainer/PageContainer';
-import GroupingSelect, {getGroupSize, Grouping} from './GroupingSelect';
+import GroupingSelect, {getGroupSize, useGrouping} from './GroupingSelect';
 import './TeamBuildPage.scss';
 import {Button, Switch} from '@material-ui/core';
 import {shuffle} from '../../../utils/common.utils';
@@ -10,10 +10,11 @@ import {useAddBlankPlayerGroup} from './GroupList/funcs';
 import {Add} from '@material-ui/icons';
 import {useTeamBuildLS} from './ls';
 import PastePlayers from './PastePlayers';
+import ExportPlayerGroupsText from './ExportPlayerGroupsText';
 import ExportPlayersText from './ExportPlayersText';
 
 const TeamBuildPage: FC = () => {
-  const [grouping, setGrouping] = useState<Grouping>(Grouping.duel);
+  const {grouping, setGrouping} = useGrouping();
   const {_players, players, setPlayers} = usePlayerItems();
   const [randomize, setRandomize] = useState<boolean>(true);
   const hasError = !players.length || !!players.find(p => !p.name || p.error);
@@ -67,6 +68,7 @@ const TeamBuildPage: FC = () => {
             </div>
             <div className={'col1'}>
                 <PastePlayers setPlayers={setPlayers}/>
+                <ExportPlayersText players={_players}/>
             </div>
         </div>
         <h2 className={'groupListAdd'}>
@@ -74,7 +76,7 @@ const TeamBuildPage: FC = () => {
             Группы
         </h2>
         <GroupList groups={playerGroups} setGroups={setGroups}/>
-        <ExportPlayersText playerGroups={playerGroups}/>
+        <ExportPlayerGroupsText playerGroups={_groups}/>
     </PageContainer>
   );
 };

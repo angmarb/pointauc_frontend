@@ -1,5 +1,6 @@
 import {Dispatch, SetStateAction, useCallback, useMemo, useState} from 'react';
 import {PlayerItem} from './types';
+import {getInitState} from '../ls';
 
 export function makeBlankPlayer(): PlayerItem {
     return {
@@ -20,8 +21,12 @@ export function useAddBlankPlayer(setPlayers: Dispatch<SetStateAction<PlayerItem
       }, [setPlayers]);
 }
 
+function init() {
+    return getInitState()?.players ?? [];
+}
+
 export function usePlayerItems() {
-  const [_players, setPlayers] = useState<PlayerItem[]>([]);
+  const [_players, setPlayers] = useState<PlayerItem[]>(init);
 
   const players = useMemo(() => (
       _players.map(p => ({

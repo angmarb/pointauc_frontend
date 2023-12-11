@@ -1,5 +1,6 @@
 import {Dispatch, SetStateAction, useCallback, useMemo, useState} from 'react';
 import {ParsedResultPlayerGroup, ResultPlayerGroup} from './types';
+import {getInitState} from '../ls';
 
 export function makeEmptyGroups(playerCount: number, groupSize: number): ResultPlayerGroup[] {
     const groupCount = Math.ceil(playerCount / groupSize);
@@ -18,9 +19,12 @@ export function useAddBlankPlayerGroup(setGroups: Dispatch<SetStateAction<Result
     setGroups(oldPlayers => oldPlayers.concat([makeBlankPlayerGroup()]));
   }, [setGroups]);
 }
+function init() {
+    return getInitState()?.playerGroups ?? [];
+}
 
 export function usePlayerGroupItems() {
-  const [_groups, setGroups] = useState<ResultPlayerGroup[]>([]);
+  const [_groups, setGroups] = useState<ResultPlayerGroup[]>(init);
 
   const playerGroups: ParsedResultPlayerGroup[] = useMemo(() => (
       _groups.map(p => ({

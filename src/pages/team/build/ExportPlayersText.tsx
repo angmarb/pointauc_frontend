@@ -1,34 +1,26 @@
 import {Button, TextareaAutosize} from '@material-ui/core';
 import React, {useCallback, useState} from 'react';
-import {ResultPlayerGroup} from './GroupList';
+import {PlayerItem} from './PlayerList/types';
 
 interface Props {
-    playerGroups: ResultPlayerGroup[];
+    players: PlayerItem[];
 }
 
-const ExportPlayersText = ({playerGroups}: Props) => {
+const ExportPlayersText = ({players}: Props) => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
     const [text, setText] = useState<string>('');
     const exportToText = useCallback(() => {
-        setText(playerGroups.map(g => `${g.name}\n${g.players.map(p => p.name).join('\n')}`).join('\n\n'));
-    }, [playerGroups]);
+        setText(players.map(g => `${g.name}`).join('\n'));
+    }, [players]);
 
     const onClick = useCallback(() => {
-        if (isOpen) {
-            if (playerGroups.length) {
-                exportToText();
-            } else {
-                setIsOpen(false);
-            }
-        } else {
-            if (playerGroups.length) {
-                exportToText();
-            }
+        if (players.length) {
+            exportToText();
+        }
+        if (!isOpen) {
             setIsOpen(true);
         }
-    }, [isOpen, exportToText, playerGroups.length]);
-
-    const buttonText = isOpen && !playerGroups.length ? 'Скрыть' : 'Экспортировать группы с игроками в текст';
+    }, [isOpen, exportToText, players.length]);
 
     return (
         <div className={'pastePlayers'}>
@@ -41,8 +33,11 @@ const ExportPlayersText = ({playerGroups}: Props) => {
                 />
             )}
             <Button variant={'outlined'} onClick={onClick}>
-                {buttonText}
+                Экспортировать игроков в текст
             </Button>
+            {isOpen && (<Button variant={'outlined'} onClick={() => setIsOpen(false)}>
+                Скрыть
+            </Button>)}
         </div>
     );
 };

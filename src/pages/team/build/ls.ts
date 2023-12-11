@@ -58,6 +58,15 @@ function decode(data: string | undefined | null): Decoded | null {
     return null;
 }
 
+export function getInitState(): Decoded[0] | null {
+    const decoded = decode(localStorage.getItem(LocalStorage.TeamBuildState));
+    if (decoded && decoded.length) {
+        return decoded[decoded.length - 1];
+
+    }
+    return null;
+}
+
 export function useTeamBuildLS({
     players, setPlayers, setGroups, playerGroups, setGrouping, grouping
 }: Props) {
@@ -65,12 +74,6 @@ export function useTeamBuildLS({
     const stateList = useRef<Decoded>([]);
     useLayoutEffect(() => {
         const decoded = decode(localStorage.getItem(LocalStorage.TeamBuildState));
-        if (decoded && decoded.length) {
-            const last = decoded[decoded.length - 1];
-            last.players && setPlayers(last.players);
-            last.playerGroups && setGroups(last.playerGroups);
-            last.grouping && setGrouping(last.grouping);
-        }
         stateList.current = decoded ?? [];
     }, [setGroups, setPlayers, setGrouping]);
 
@@ -88,6 +91,7 @@ export function useTeamBuildLS({
         if (stateList.current.length > 100) {
             stateList.current.shift();
         }
+        console.log('Save ', JSON.stringify(last));
         localStorage.setItem(LocalStorage.TeamBuildState, JSON.stringify(encode(stateList.current)));
     }, [players, playerGroups, grouping]);
 

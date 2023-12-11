@@ -1,10 +1,22 @@
 import {MenuItem, Select} from '@material-ui/core';
-import React from 'react';
+import React, {useState} from 'react';
+import {getInitState} from './ls';
 export enum Grouping {
     duel = '1x1',
     groupBy2 = '2x2',
     groupBy3 = '3x3',
     groupBy4 = '4x4'
+}
+
+function init() {
+    return getInitState()?.grouping ?? Grouping.duel;
+}
+
+export function useGrouping() {
+  const [grouping, setGrouping] = useState<Grouping>(init);
+  return {
+      grouping, setGrouping
+  };
 }
 
 export function getGroupSize(g: Grouping): number {
