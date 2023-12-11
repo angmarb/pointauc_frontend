@@ -11,28 +11,33 @@ export interface Props {
     setGroups: Dispatch<SetStateAction<ResultPlayerGroup[]>>;
     grouping: Grouping;
     setGrouping: Dispatch<SetStateAction<Grouping>>;
+    randomize: boolean;
+    setRandomize: Dispatch<SetStateAction<boolean>>;
 }
 
 type Encoded = {
     players: string[] | null;
     playerGroups: {name: string, players: string[]}[] | null;
     grouping: Grouping | null;
+    randomize: boolean | null;
 }[];
 
 type Decoded = {
     players: PlayerItem[] | null;
     playerGroups: ResultPlayerGroup[] | null;
     grouping: Grouping | null,
+    randomize: boolean | null;
 }[];
 
 function encode(currentState: Decoded): Encoded {
-    return currentState.map(({players, playerGroups, grouping}) => ({
+    return currentState.map(({players, playerGroups, grouping, randomize}) => ({
         players: players?.map(p => p.name) ?? null,
         playerGroups: playerGroups?.map(pg => ({
             name: pg.name,
             players: pg.players.map(p => p.name)
         })) ?? null,
-        grouping: grouping
+        grouping: grouping,
+        randomize: randomize
     }));
 }
 
@@ -53,6 +58,7 @@ function decode(data: string | undefined | null): Decoded | null {
                 }))
             })) ?? null,
             grouping: _j.grouping ?? null,
+            randomize: _j.randomize ?? null,
         }));
     }
     return null;
@@ -68,25 +74,31 @@ export function getInitState(): Decoded[0] | null {
 }
 
 export function useTeamBuildLS({
-    players, setPlayers, setGroups, playerGroups, setGrouping, grouping
+    players, setPlayers, setGroups, playerGroups, setGrouping, grouping,
+    randomize, setRandomize
 }: Props) {
 
     const stateList = useRef<Decoded>([]);
     useLayoutEffect(() => {
         const decoded = decode(localStorage.getItem(LocalStorage.TeamBuildState));
         stateList.current = decoded ?? [];
-    }, [setGroups, setPlayers, setGrouping]);
+    }, []);
 
     useEffect(() => {
         const last = stateList.current[stateList.current.length - 1];
-        if (last && JSON.stringify(players) === JSON.stringify(last.players) && last.grouping === grouping && JSON.stringify(last.playerGroups) === JSON.stringify(playerGroups)) {
+        if (last &&
+            JSON.stringify(players) === JSON.stringify(last.players) &&
+            last.grouping === grouping &&
+            last.randomize === randomize &&
+            JSON.stringify(last.playerGroups) === JSON.stringify(playerGroups)) {
             console.log('cached');
             return;
         }
         stateList.current.push({
             players,
             grouping,
-            playerGroups
+            playerGroups,
+            randomize
         });
         if (stateList.current.length > 100) {
             stateList.current.shift();
@@ -106,6 +118,7 @@ export function useTeamBuildLS({
                     last.players && setPlayers(last.players);
                     last.playerGroups && setGroups(last.playerGroups);
                     last.grouping && setGrouping(last.grouping);
+                    last.randomize !== null && setRandomize(last.randomize)
                 }
                 localStorage.setItem(LocalStorage.TeamBuildState, JSON.stringify(encode(stateList.current)));
             }

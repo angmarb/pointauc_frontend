@@ -8,15 +8,19 @@ import {GroupList, makeEmptyGroups, ResultPlayerGroup, usePlayerGroupItems} from
 import {PlayerList, useAddBlankPlayer, usePlayerItems} from './PlayerList';
 import {useAddBlankPlayerGroup} from './GroupList/funcs';
 import {Add} from '@material-ui/icons';
-import {useTeamBuildLS} from './ls';
+import {getInitState, useTeamBuildLS} from './ls';
 import PastePlayers from './PastePlayers';
 import ExportPlayerGroupsText from './ExportPlayerGroupsText';
 import ExportPlayersText from './ExportPlayersText';
 
+function initRandomize() {
+    return getInitState()?.randomize ?? true;
+}
+
 const TeamBuildPage: FC = () => {
   const {grouping, setGrouping} = useGrouping();
   const {_players, players, setPlayers} = usePlayerItems();
-  const [randomize, setRandomize] = useState<boolean>(true);
+  const [randomize, setRandomize] = useState<boolean>(initRandomize);
   const hasError = !players.length || !!players.find(p => !p.name || p.error);
 
   const {_groups, playerGroups, setGroups} = usePlayerGroupItems();
@@ -38,7 +42,8 @@ const TeamBuildPage: FC = () => {
   useTeamBuildLS({
       players: _players, setPlayers,
       setGroups, playerGroups: _groups,
-      grouping, setGrouping
+      grouping, setGrouping,
+      randomize, setRandomize
   });
 
   return (
