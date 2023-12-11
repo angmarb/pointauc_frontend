@@ -105,7 +105,7 @@ export function useTeamBuildLS({
         }
         console.log(`Save[size=${stateList.current.length}] `, JSON.stringify(stateList.current[stateList.current.length - 1]));
         localStorage.setItem(LocalStorage.TeamBuildState, JSON.stringify(encode(stateList.current)));
-    }, [players, playerGroups, grouping]);
+    }, [players, playerGroups, grouping, randomize]);
 
     useEffect(() => {
         const listener = (e: KeyboardEvent) => {
@@ -127,5 +127,5 @@ export function useTeamBuildLS({
         return () => {
             window.removeEventListener('keydown', listener);
         };
-    }, [setPlayers, setGrouping, setGroups]);
+    }, [setPlayers, setGrouping, setGroups, setRandomize]);
 }
