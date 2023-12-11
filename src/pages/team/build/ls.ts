@@ -91,16 +91,17 @@ export function useTeamBuildLS({
         if (stateList.current.length > 100) {
             stateList.current.shift();
         }
-        console.log('Save ', JSON.stringify(stateList.current[stateList.current.length - 1]));
+        console.log(`Save[size=${stateList.current.length}] `, JSON.stringify(stateList.current[stateList.current.length - 1]));
         localStorage.setItem(LocalStorage.TeamBuildState, JSON.stringify(encode(stateList.current)));
     }, [players, playerGroups, grouping]);
 
     useEffect(() => {
         const listener = (e: KeyboardEvent) => {
+            console.log('ctrl-Z', stateList.current.length);
             if (e.key === 'z' && e.ctrlKey && stateList.current.length > 1) {
                 stateList.current.pop();
                 const last = stateList.current[stateList.current.length - 1];
-                console.log('Load ' , JSON.stringify(last));
+                console.log(`Load[size=${stateList.current.length}]` , JSON.stringify(last));
                 if (last) {
                     last.players && setPlayers(last.players);
                     last.playerGroups && setGroups(last.playerGroups);
