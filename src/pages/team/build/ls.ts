@@ -100,7 +100,7 @@ export function useTeamBuildLS({
             if (e.key === 'z' && e.ctrlKey && stateList.current.length > 1) {
                 stateList.current.pop();
                 const last = stateList.current[stateList.current.length - 1];
-                console.log('Load' , JSON.stringify(last));
+                console.log('Load ' , JSON.stringify(last));
                 if (last) {
                     last.players && setPlayers(last.players);
                     last.playerGroups && setGroups(last.playerGroups);
