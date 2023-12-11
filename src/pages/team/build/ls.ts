@@ -108,5 +108,5 @@ export function useTeamBuildLS({
         return () => {
             window.removeEventListener('keydown', listener);
         };
-    }, []);
+    }, [setPlayers, setGrouping, setGroups]);
 }

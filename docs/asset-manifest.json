@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/pointauc_frontend/static/css/main.175ed1ac.chunk.css",
-    "main.js": "/pointauc_frontend/static/js/main.143490c5.chunk.js",
-    "main.js.map": "/pointauc_frontend/static/js/main.143490c5.chunk.js.map",
+    "main.css": "/pointauc_frontend/static/css/main.c0099bda.chunk.css",
+    "main.js": "/pointauc_frontend/static/js/main.2424fcdd.chunk.js",
+    "main.js.map": "/pointauc_frontend/static/js/main.2424fcdd.chunk.js.map",
     "runtime-main.js": "/pointauc_frontend/static/js/runtime-main.dc5af24d.js",
     "runtime-main.js.map": "/pointauc_frontend/static/js/runtime-main.dc5af24d.js.map",
-    "static/js/2.903c3ecc.chunk.js": "/pointauc_frontend/static/js/2.903c3ecc.chunk.js",
-    "static/js/2.903c3ecc.chunk.js.map": "/pointauc_frontend/static/js/2.903c3ecc.chunk.js.map",
+    "static/js/2.d0db4cf6.chunk.js": "/pointauc_frontend/static/js/2.d0db4cf6.chunk.js",
+    "static/js/2.d0db4cf6.chunk.js.map": "/pointauc_frontend/static/js/2.d0db4cf6.chunk.js.map",
     "index.html": "/pointauc_frontend/index.html",
-    "precache-manifest.c18b55b5f5e7c51fd9f7335e22fc64a9.js": "/pointauc_frontend/precache-manifest.c18b55b5f5e7c51fd9f7335e22fc64a9.js",
+    "precache-manifest.48156be658dd3c5dd285b60cfe45de6c.js": "/pointauc_frontend/precache-manifest.48156be658dd3c5dd285b60cfe45de6c.js",
     "service-worker.js": "/pointauc_frontend/service-worker.js",
-    "static/css/main.175ed1ac.chunk.css.map": "/pointauc_frontend/static/css/main.175ed1ac.chunk.css.map",
-    "static/js/2.903c3ecc.chunk.js.LICENSE.txt": "/pointauc_frontend/static/js/2.903c3ecc.chunk.js.LICENSE.txt",
-    "static/js/main.143490c5.chunk.js.LICENSE.txt": "/pointauc_frontend/static/js/main.143490c5.chunk.js.LICENSE.txt",
+    "static/css/main.c0099bda.chunk.css.map": "/pointauc_frontend/static/css/main.c0099bda.chunk.css.map",
+    "static/js/2.d0db4cf6.chunk.js.LICENSE.txt": "/pointauc_frontend/static/js/2.d0db4cf6.chunk.js.LICENSE.txt",
+    "static/js/main.2424fcdd.chunk.js.LICENSE.txt": "/pointauc_frontend/static/js/main.2424fcdd.chunk.js.LICENSE.txt",
     "static/media/DAAlert.02c44431.svg": "/pointauc_frontend/static/media/DAAlert.02c44431.svg",
     "static/media/index.scss": "/pointauc_frontend/static/media/HelveticaNeueCyr-Thin.76bcf092.woff",
     "static/media/auction.4bbe2c6e.svg": "/pointauc_frontend/static/media/auction.4bbe2c6e.svg",
@@ -26,8 +26,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.dc5af24d.js",
-    "static/js/2.903c3ecc.chunk.js",
-    "static/css/main.175ed1ac.chunk.css",
-    "static/js/main.143490c5.chunk.js"
+    "static/js/2.d0db4cf6.chunk.js",
+    "static/css/main.c0099bda.chunk.css",
+    "static/js/main.2424fcdd.chunk.js"
   ]
 }
