@@ -21,6 +21,7 @@ import NewDomainRedirect from './components/NewDomainRedirect/NewDomainRedirect'
 import AudioRoom from './components/AudioRoom/AudioRoom';
 import './assets/i18n';
 import AucWidget from './components/AucWidget/AucWidget';
+import TeamBuildPage from './pages/team/build/TeamBuildPage';
 
 dayjs.locale('ru');
 
@@ -79,6 +80,11 @@ if (window.location.host === 'woodsauc-reneawal.netlify.app') {
           <Route exact path={ROUTES.AUC_WIDGET}>
             <MuiThemeProvider theme={theme}>
               <AucWidget />
+            </MuiThemeProvider>
+          </Route>
+          <Route exact path={ROUTES.TEAM_BUILD}>
+            <MuiThemeProvider theme={theme}>
+              <TeamBuildPage />
             </MuiThemeProvider>
           </Route>
           <Route path={ROUTES.HOME}>

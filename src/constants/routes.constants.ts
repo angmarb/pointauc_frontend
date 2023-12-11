@@ -18,6 +18,7 @@ const ROUTES = {
   REQUESTS: '/requests',
   AUDIO_ROOM: '/audioRoom',
   AUC_WIDGET: '/auc_widget',
+  TEAM_BUILD: '/team/build'
 };
 
 export default ROUTES;

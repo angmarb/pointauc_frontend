@@ -1,0 +1,98 @@
+.teamBuildPage {
+  max-width: 100% !important;
+  margin: 0 !important;
+  .row1 {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .col1 {
+
+  }
+  .clickable {
+    cursor: pointer;
+  }
+  .groupingSelect {
+      width: 70px;
+    margin-bottom: 15px;
+    margin-left: 10px;
+  }
+  .playerListAdd {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    gap: 10px;
+  }
+  .groupListAdd {
+    width: 100%;
+    padding-top: 25px;
+    border-top: 2px dashed rgba(255, 255, 255, 0.23);
+    margin: 25px 0 0 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .makeGroups {
+    width: 500px;
+    margin-top: 15px;
+  }
+  .playerList, .groupList {
+    gap: 15px;
+  }
+  .playerListItem, .groupListItem {
+    border: 1px solid transparent;
+    width: 100%;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    .playerListItemNumber, .groupListItemNumber {
+      margin-right: 10px;
+
+    }
+    .groupListItemName {
+      width: 200px;
+    }
+    .playerListItemName {
+      width: 400px;
+    }
+    .playerListItemError, .groupListItemError {
+      white-space: pre;
+      word-break: keep-all;
+      color: #f44336;
+    }
+  }
+  .groupListItemHead {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .playerListItemAction, .groupListItemAction {
+    visibility: hidden;
+  }
+  .playerListItem:hover .playerListItemAction {
+    visibility: visible;
+  }
+  .groupListItem:hover {
+    border: 1px dashed rgba(255, 255, 255, 0.23);;
+  }
+  .groupListItem:hover .groupListItemAction {
+    visibility: visible;
+  }
+  .groupListItemContent {
+    display: flex;
+    flex-direction: column;
+  }
+  .makeGroupsWrap {
+    border: 1px solid rgba(255, 255, 255, 0.23);
+    width: fit-content;
+    padding: 10px 20px;
+    margin-bottom: 15px;
+  }
+  .pastePlayers {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .pastePlayersTextarea {
+    width: 500px;
+  }
+}

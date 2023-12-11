@@ -40,4 +40,5 @@ export const YOUTUBE_API_KEYS = [];
 
 export enum LocalStorage {
   SaveConfig = 'saveConfig',
+  TeamBuildState = 'TeamBuildState',
 }
